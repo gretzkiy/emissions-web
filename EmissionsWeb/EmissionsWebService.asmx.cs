@@ -42,5 +42,20 @@ namespace EmissionsWeb
                 return "error in testmethod";
             }
         }
+
+        [WebMethod]
+        public void UploadData(TransferData[] data)
+        {
+            try
+            {
+                var currentData = (HashSet<TransferData>)HttpContext.Current.Application["Measurements"];
+                currentData.UnionWith(data);
+                
+                HttpContext.Current.Application.Lock();
+                Application["Measurements"] = currentData;
+                HttpContext.Current.Application.UnLock();
+            }
+            catch { }
+        } 
     }
 }
