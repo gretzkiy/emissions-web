@@ -38,15 +38,9 @@
                 <%--Site Scripts--%>
             </Scripts>
         </asp:ScriptManager>
-
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
                     <a class="navbar-brand" runat="server" href="~/">Контроль выбросов</a>
                 </div>
             </div>
@@ -61,21 +55,5 @@
         </div>
 
     </form>
-    <script type="text/javascript">
-        function getById() {
-            fetch("api/Measurements/f5cf5167-cc38-4e24-9cfb-54a41b242eb6", {
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                },
-            })
-                .then(data => data.json())
-                .then(data => {
-                    console.log(data);
-                    setTimeout(getById, 1000);
-                })
-        }
-        getById();
-        </script>
 </body>
 </html>

@@ -1,12 +1,8 @@
-﻿using System;
+﻿using EmissionsLibrary;
 using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Net.Http;
-using System.Web.Http;
 using System.Web;
-using System.Web.Services;
-using EmissionsLibrary;
+using System.Web.Http;
 
 namespace EmissionsWeb
 {
